@@ -18,6 +18,10 @@ const ProductDetails = lazy(() =>
   import('./pages/ProductDetails')
 );
 
+const Error404 = lazy(() =>
+  import('./components/Error404')
+);
+
 function App() {
   return (
     <Box sx={{ display: 'flex', "& .MuiTypography-root, .MuiButton-root": { fontFamily: 'Poppins' } }} >
@@ -32,7 +36,7 @@ function App() {
           {/* Product Details Routes */}
           <Route path="/product-details/:id" element={<ProductDetails />} />
 
-          <Route path="*" element={<Products />} />
+          <Route path="*" element={<Error404 />} />
         </Routes>
       </Suspense>
       <ToastContainer
